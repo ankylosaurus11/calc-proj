@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="container">
+        <div class="display">0</div>
+        <button class="add">+</button>
+        <button class="sub">-</button>
+        <button class="multi">*</button>
+        <button class="division">/</button>
+        <button class="equals">=</button>
+        <button class="clear">C</button>
+    </div>
 <script>
-let a = ""
-let operator =
-let b =
-let display = 0
+let a = "";
+let operator = "";
+let b = "";
+let display = 0;
 
 
 operate = function() {
 
-if (operator === +) {
+if (operator === "+") {
 add = function(a, b) {
 display = a + b;
 a = display;
 }
 
-} else if (operator === -) {
+} else if (operator === "-") {
 subt = function(a, b) {
 display = a - b;
 a = display;
 }
 
-} else if (operator === *) {
+} else if (operator === "*") {
 mult = function(a, b) {
 display = a * b;
 a = display;
 }
 
-} else if (operator === /) {
+} else if (operator === "/") {
 divide = function(a, b) {
 display = a / b;
 a = display;
