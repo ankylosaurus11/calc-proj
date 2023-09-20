@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let a = ""
+let operator =
+let b =
+let display = 0
+
+
+operate = function() {
+
+if (operator === +) {
+add = function(a, b) {
+display = a + b;
+a = display;
+}
+
+} else if (operator === -) {
+subt = function(a, b) {
+display = a - b;
+a = display;
+}
+
+} else if (operator === *) {
+mult = function(a, b) {
+display = a * b;
+a = display;
+}
+
+} else if (operator === /) {
+divide = function(a, b) {
+display = a / b;
+a = display;
+}
+}
+}
+
+buttonPush = function() {
+if (a === "") {
+a.textContent(button);
+}else {
+b.textContent(button);
+}
+}
+
+clear = function() {
+display.textContent("");
+}
+
+equalsButton = function() {
+operate(a, b, operator);
+}
+
+</script>
+</body>
+</html>
