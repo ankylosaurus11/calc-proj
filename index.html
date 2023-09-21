@@ -15,30 +15,33 @@
         <button class="division">/</button>
         <button class="equals">=</button>
         <button class="clear">C</button>
-        <button>0</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button class="zero">0</button>
+        <button class="one">1</button>
+        <button class="two">2</button>
+        <button class="three">3</button>
+        <button class="four">4</button>
+        <button class="five">5</button>
+        <button class="six">6</button>
+        <button class="seven">7</button>
+        <button class="eight">8</button>
+        <button class="nine">9</button>
     </div>
 <script>
 let a = "";
 let operator = "";
 let b = "";
-let display = 0;
+let display = "";
 
 
-operate = function() {
+operate = function(a, b, operator) {
 
-if (operator === "+") {
-add = function(a, b) {
-display = a + b;
+if (operator = "+") {
+addition = function(a, b) {
+let display = a + b;
 a = display;
+console.log(a)
+console.log(b)
+console.log(display)
 }
 
 } else if (operator === "-") {
@@ -58,6 +61,8 @@ divide = function(a, b) {
 display = a / b;
 a = display;
 }
+} else {
+    alert("oops")
 }
 }
 
@@ -77,13 +82,32 @@ equalsButton = function() {
 operate(a, b, operator);
 }
 
+
 //////////////////////////////////
 //////////////////////////////////
 
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
-    buttonPush();
+const add = document.querySelector('.add');
+add.addEventListener('click', () => {
+    let operator = add.textContent;
+    console.log(operator)
+})
+
+const seven = document.querySelector('.seven');
+seven.addEventListener('click', () => {
+    let a = seven.textContent;
     console.log(a)
+})
+
+const two = document.querySelector('.two');
+two.addEventListener('click', () => {
+    let b = two.textContent;
+    console.log(b)
+})
+
+const equals = document.querySelector('.equals');
+equals.addEventListener('click', () => {
+    operate(a, b, operator);
+    console.log(display)
 })
 
 
