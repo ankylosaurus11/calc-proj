@@ -15,27 +15,41 @@
     <script>
 
         let a = "";
-        let b;
+        let b = "";
         let operator = "";
         let display;
 
         function numbers(button) {
             //a = numb until an operator is entered, then b = numb
-            if (button === "1" || button === "2") {
-                a += button;
-                console.log(a);
-            } else if (button === "+") {
-                operator += button;
-                console.log(operator);
-                // break from here and start inputs at b?
+            if (operator === "") {
+                if (button === "1" || button === "2") {
+                    a += button;
+                    console.log(a);
+                } else if (button === "+") {
+                    operator += button;
+                    console.log(operator);
+                    // break from here and start inputs at b?
+                }
+            } else if (button === "1" || button === "2") {
+                b += button;
+                console.log(b);
             }
         }
 
+        function operate() {
+            display = parseInt(a) + parseInt(b)
+            console.log(display)
+        }
+    
         const one = document.querySelector('#one');
         const two = document.querySelector('#two');
         const equals = document.querySelector('#equals');
         const plus = document.querySelector('#plus');
         const btns = document.querySelectorAll('button');
+
+        equals.addEventListener('click', () => {
+            operate(a, b)
+        })
 
         btns.forEach(function(btn){
         btn.addEventListener('click', () => {
