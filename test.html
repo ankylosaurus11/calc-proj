@@ -9,8 +9,19 @@
     <div>
     <button id="one">1</button>
     <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="nine">9</button>
+    <button id="zero">0</button>
     <button id="equals">=</button>
     <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="divide">/</button>
+    <button id="multiply">*</button>
     </div>
     <script>
 
@@ -22,23 +33,46 @@
         function numbers(button) {
             //a = numb until an operator is entered, then b = numb
             if (operator === "") {
-                if (button === "1" || button === "2") {
+                if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
                     a += button;
                     console.log(a);
-                } else if (button === "+") {
+                } else if (button === "+" || button === "-" || button === "*" || button === "/")  {
                     operator += button;
                     console.log(operator);
                     // break from here and start inputs at b?
                 }
-            } else if (button === "1" || button === "2") {
+            } else if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
                 b += button;
                 console.log(b);
             }
         }
 
         function operate() {
-            display = parseInt(a) + parseInt(b)
-            console.log(display)
+            if (operator === "+") {
+                display = parseInt(a) + parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+            } else if (operator === "-") {
+                display = parseInt(a) - parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+            } else if (operator === "/") {
+                display = parseInt(a) / parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+            } else if (operator === "*") {
+                display = parseInt(a) * parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+            }
         }
     
         const one = document.querySelector('#one');
