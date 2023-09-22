@@ -27,17 +27,19 @@
         <button class="nine">9</button>
     </div>
 <script>
-let a = "";
-let operator = "";
-let b = "";
-let display = "";
+let a;
+let operator;
+let b;
+let display;
 
 
-operate = function(a, b, operator) {
-
-if (operator = "+") {
-addition = function(a, b) {
-let display = a + b;
+function operate(a, b, operator) {
+console.log(a)
+console.log(b)
+console.log(operator)
+if (operator === '+') {
+function addition(a, b) {
+display = a + b;
 a = display;
 console.log(a)
 console.log(b)
@@ -66,21 +68,21 @@ a = display;
 }
 }
 
-buttonPush = function() {
-if (a === "") {
-a.textContent(button);
-}else {
-b.textContent(button);
-}
-}
-
-clear = function() {
-display.textContent("");
-}
-
-equalsButton = function() {
-operate(a, b, operator);
-}
+//buttonPush = function() {
+//if (a === "") {
+//a.textContent(button);
+//}else {
+//b.textContent(button);
+//}
+//}
+//
+//clear = function() {
+//display.textContent("");
+//}
+//
+//equalsButton = function() {
+//operate(a, b, operator);
+//}
 
 
 //////////////////////////////////
@@ -88,26 +90,25 @@ operate(a, b, operator);
 
 const add = document.querySelector('.add');
 add.addEventListener('click', () => {
-    let operator = add.textContent;
+    let operator = "+";
     console.log(operator)
 })
 
 const seven = document.querySelector('.seven');
 seven.addEventListener('click', () => {
-    let a = seven.textContent;
+    let a = "7";
     console.log(a)
 })
 
 const two = document.querySelector('.two');
 two.addEventListener('click', () => {
-    let b = two.textContent;
+    let b = "2";
     console.log(b)
 })
 
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
     operate(a, b, operator);
-    console.log(display)
 })
 
 

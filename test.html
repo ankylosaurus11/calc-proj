@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="equals">=</button>
+    <button id="plus">+</button>
+    </div>
+    <script>
+
+        let a = "";
+        let b;
+        let operator = "";
+        let display;
+
+        function numbers(button) {
+            //a = numb until an operator is entered, then b = numb
+            if (button === "1" || button === "2") {
+                a += button;
+                console.log(a);
+            } else if (button === "+") {
+                operator += button;
+                console.log(operator);
+                // break from here and start inputs at b?
+            }
+        }
+
+        const one = document.querySelector('#one');
+        const two = document.querySelector('#two');
+        const equals = document.querySelector('#equals');
+        const plus = document.querySelector('#plus');
+        const btns = document.querySelectorAll('button');
+
+        btns.forEach(function(btn){
+        btn.addEventListener('click', () => {
+            numbers(btn.textContent)
+        })
+    })
+        
+    </script>
+    
+</body>
+</html>
