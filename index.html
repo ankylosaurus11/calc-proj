@@ -7,111 +7,117 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <div class="display">0</div>
-        <button class="add">+</button>
-        <button class="sub">-</button>
-        <button class="multi">*</button>
-        <button class="division">/</button>
-        <button class="equals">=</button>
-        <button class="clear">C</button>
-        <button class="zero">0</button>
-        <button class="one">1</button>
-        <button class="two">2</button>
-        <button class="three">3</button>
-        <button class="four">4</button>
-        <button class="five">5</button>
-        <button class="six">6</button>
-        <button class="seven">7</button>
-        <button class="eight">8</button>
-        <button class="nine">9</button>
+    <div id="display">0</div>
+    <div>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+    <button id="seven">7</button>
+    <button id="eight">8</button>
+    <button id="nine">9</button>
+    <button id="zero">0</button>
+    <button id="equals">=</button>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="divide">/</button>
+    <button id="multiply">*</button>
+    <div>
+        <button id="clear">C</button>
     </div>
-<script>
-let a;
-let operator;
-let b;
-let display;
+    </div>
+    <script>
 
+        const view = document.querySelector('#display');
 
-function operate(a, b, operator) {
-console.log(a)
-console.log(b)
-console.log(operator)
-if (operator === '+') {
-function addition(a, b) {
-display = a + b;
-a = display;
-console.log(a)
-console.log(b)
-console.log(display)
-}
+        let a = "";
+        let b = "";
+        let operator = "";
+        let display = "0";
 
-} else if (operator === "-") {
-subt = function(a, b) {
-display = a - b;
-a = display;
-}
+        view.textContent = display;
 
-} else if (operator === "*") {
-mult = function(a, b) {
-display = a * b;
-a = display;
-}
+        function numbers(button) {
+            if (operator === "") {
+                if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
+                    a += button;
+                    if (view.textContent === "0") {
+                        view.textContent = button;
+                    } else {
+                    view.textContent += button
+                    }
+                    console.log(a);
+                } else if (button === "+" || button === "-" || button === "*" || button === "/")  {
+                    operator += button;
+                    view.textContent += button;
+                    console.log(operator);
+                }
+            } else if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
+                b += button;
+                if (view.textContent === "0") {
+                        view.textContent = button;
+                    } else {
+                    view.textContent += button
+                    }
+                console.log(b);
+            }
+        }
 
-} else if (operator === "/") {
-divide = function(a, b) {
-display = a / b;
-a = display;
-}
-} else {
-    alert("oops")
-}
-}
+        function operate() {
+            if (operator === "+") {
+                display = parseInt(a) + parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+                view.textContent = a;
+            } else if (operator === "-") {
+                display = parseInt(a) - parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+                view.textContent = a;
+            } else if (operator === "/") {
+                display = parseInt(a) / parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+                view.textContent = a;
+            } else if (operator === "*") {
+                display = parseInt(a) * parseInt(b);
+                console.log(display);
+                a = display;
+                b = "";
+                operator = "";
+                view.textContent = a;
+            }
+        }
+    
+        const one = document.querySelector('#one');
+        const two = document.querySelector('#two');
+        const equals = document.querySelector('#equals');
+        const plus = document.querySelector('#plus');
+        const btns = document.querySelectorAll('button');
+        const clear = document.querySelector('#clear');
 
-//buttonPush = function() {
-//if (a === "") {
-//a.textContent(button);
-//}else {
-//b.textContent(button);
-//}
-//}
-//
-//clear = function() {
-//display.textContent("");
-//}
-//
-//equalsButton = function() {
-//operate(a, b, operator);
-//}
+        clear.addEventListener('click', () => {
+            location.reload();
+        })
 
+        equals.addEventListener('click', () => {
+            operate(a, b)
+        })
 
-//////////////////////////////////
-//////////////////////////////////
-
-const add = document.querySelector('.add');
-add.addEventListener('click', () => {
-    let operator = "+";
-    console.log(operator)
-})
-
-const seven = document.querySelector('.seven');
-seven.addEventListener('click', () => {
-    let a = "7";
-    console.log(a)
-})
-
-const two = document.querySelector('.two');
-two.addEventListener('click', () => {
-    let b = "2";
-    console.log(b)
-})
-
-const equals = document.querySelector('.equals');
-equals.addEventListener('click', () => {
-    operate(a, b, operator);
-})
-
-
-</script>
+        btns.forEach(function(btn){
+        btn.addEventListener('click', () => {
+            numbers(btn.textContent)
+        })
+    })
+        
+    </script>
 </body>
 </html>
