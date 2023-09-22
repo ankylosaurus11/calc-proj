@@ -50,6 +50,7 @@
                     console.log(a);
                 } else if (button === "+" || button === "-" || button === "*" || button === "/")  {
                     operator += button;
+                    view.textContent += button;
                     console.log(operator);
                 }
             } else if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
@@ -70,24 +71,28 @@
                 a = display;
                 b = "";
                 operator = "";
+                view.textContent = a;
             } else if (operator === "-") {
                 display = parseInt(a) - parseInt(b);
                 console.log(display);
                 a = display;
                 b = "";
                 operator = "";
+                view.textContent = a;
             } else if (operator === "/") {
                 display = parseInt(a) / parseInt(b);
                 console.log(display);
                 a = display;
                 b = "";
                 operator = "";
+                view.textContent = a;
             } else if (operator === "*") {
                 display = parseInt(a) * parseInt(b);
                 console.log(display);
                 a = display;
                 b = "";
                 operator = "";
+                view.textContent = a;
             }
         }
     
