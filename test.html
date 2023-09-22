@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="display">0</div>
     <div>
     <button id="one">1</button>
     <button id="two">2</button>
@@ -22,27 +23,42 @@
     <button id="minus">-</button>
     <button id="divide">/</button>
     <button id="multiply">*</button>
+    <div>
+        <button id="clear">C</button>
+    </div>
     </div>
     <script>
+
+        const view = document.querySelector('#display');
 
         let a = "";
         let b = "";
         let operator = "";
-        let display;
+        let display = "0";
+
+        view.textContent = display;
 
         function numbers(button) {
-            //a = numb until an operator is entered, then b = numb
             if (operator === "") {
                 if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
                     a += button;
+                    if (view.textContent === "0") {
+                        view.textContent = button;
+                    } else {
+                    view.textContent += button
+                    }
                     console.log(a);
                 } else if (button === "+" || button === "-" || button === "*" || button === "/")  {
                     operator += button;
                     console.log(operator);
-                    // break from here and start inputs at b?
                 }
             } else if (button === "0" || button === "1" || button === "2" || button === "3" || button === "4" || button === "5" || button === "6" || button === "7" || button === "8" || button === "9") {
                 b += button;
+                if (view.textContent === "0") {
+                        view.textContent = button;
+                    } else {
+                    view.textContent += button
+                    }
                 console.log(b);
             }
         }
@@ -80,6 +96,11 @@
         const equals = document.querySelector('#equals');
         const plus = document.querySelector('#plus');
         const btns = document.querySelectorAll('button');
+        const clear = document.querySelector('#clear');
+
+        clear.addEventListener('click', () => {
+            location.reload();
+        })
 
         equals.addEventListener('click', () => {
             operate(a, b)
