@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    height: 20px;
+    width: 30px;
+}
+
+#display {
+    width: 180px;
+    border: 4px silver solid;
+    background-color: #96ecff;
+    font-size: 20px;
+    color: #000000a2;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #008ee6, 0 0 40px #008ee6, 0 0 50px #008ee6, 0 0 60px #008ee6, 0 0 70px #008ee6;
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #4dffe7, 0 0 40px #4dffe7, 0 0 50px #4dffe7, 0 0 60px #4dffe7, 0 0 70px #4dffe7, 0 0 80px #4dffe7;
+    }
+  }
